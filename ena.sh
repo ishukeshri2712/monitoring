@@ -65,7 +65,7 @@ ExecStart=/usr/local/bin/node_exporter \
   --no-collector.pressure \
   --no-collector.time \
   --collector.ethtool \
-  --collector.ethtool.device-include=".*" \
+  --collector.ethtool.device-include="^ens5$" \
   --collector.ethtool.device-exclude="" \
   --collector.ethtool.metrics-include=^(bw_in_allowance_exceeded|bw_out_allowance_exceeded|pps_allowance_exceeded|linklocal_allowance_exceeded|conntrack_allowance_exceeded|info)$ \
   --collector.netstat
@@ -86,3 +86,4 @@ fi
 
 # Check status
 sudo systemctl status node_exporter
+
